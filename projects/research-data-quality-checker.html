@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Research Data Quality Checker | Research IT Portfolio</title>
+
+    <meta
+        name="description"
+        content="Portfolio project: a Python command-line application for rule-based validation of structured research and measurement data."
+    >
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="site-title" href="../index.html">
+                Research IT Portfolio
+            </a>
+
+            <nav class="site-navigation" aria-label="Main navigation">
+                <ul class="navigation-list">
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#projects">
+                            Projects
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="project-detail">
+            <header class="project-hero">
+                <div class="container">
+                    <p class="section-label">
+                        Data Quality
+                    </p>
+
+                    <h1>Research Data Quality Checker</h1>
+
+                    <p class="project-lead">
+                        A local command-line application for formal and
+                        rule-based validation of structured meteorological
+                        research and measurement data stored in CSV files.
+                    </p>
+
+                    <a class="back-link" href="../index.html#projects">
+                        Back to Projects
+                    </a>
+                </div>
+            </header>
+
+            <div class="project-detail-content">
+                <div class="container">
+                    <section class="project-section">
+                        <h2>Problem</h2>
+
+                        <p>
+                            Structured measurement data can contain missing
+                            values, invalid numbers or dates, duplicate
+                            identifiers, and values outside predefined
+                            plausibility ranges. These issues should be
+                            identified before the data is processed further.
+                        </p>
+
+                        <p>
+                            The project focuses on formal data quality checks.
+                            It does not assess the scientific correctness of
+                            individual measurements.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Solution</h2>
+
+                        <p>
+                            The application reads one local CSV file per run
+                            and validates it against a fixed schema and a
+                            documented set of rules. Validation findings are
+                            collected in a structured form instead of stopping
+                            after the first detected issue.
+                        </p>
+
+                        <p>
+                            After validation, the application displays a compact
+                            terminal summary and creates a detailed UTF-8 text
+                            report.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Key Features</h2>
+
+                        <ul>
+                            <li>
+                                Validation of required CSV columns and missing
+                                required values
+                            </li>
+                            <li>
+                                Validation of numeric values and calendar dates
+                            </li>
+                            <li>
+                                Detection of duplicate measurement identifiers
+                            </li>
+                            <li>
+                                Validation against fixed plausibility ranges
+                            </li>
+                            <li>
+                                Collection of multiple findings in one run
+                            </li>
+                            <li>
+                                Terminal summary and detailed text report
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technologies</h2>
+
+                        <ul class="technology-list">
+                            <li>Python 3.14+</li>
+                            <li>Python Standard Library</li>
+                            <li>CSV</li>
+                            <li>pytest</li>
+                            <li>Ruff</li>
+                            <li>Git &amp; GitHub</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Applied Skills</h2>
+
+                        <ul>
+                            <li>CSV data processing</li>
+                            <li>Validation logic</li>
+                            <li>Structured error findings</li>
+                            <li>Error handling</li>
+                            <li>Separation of responsibilities</li>
+                            <li>Automated testing</li>
+                            <li>Command-line application development</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technical Structure</h2>
+
+                        <p>
+                            The application is divided into small modules with
+                            clearly separated responsibilities:
+                        </p>
+
+                        <ul>
+                            <li>
+                                <code>main.py</code> coordinates the command-line
+                                workflow and handles file errors and exit codes.
+                            </li>
+                            <li>
+                                <code>csv_reader.py</code> reads the input file.
+                            </li>
+                            <li>
+                                <code>validation.py</code> contains the individual
+                                validation rules and dataset validation logic.
+                            </li>
+                            <li>
+                                <code>report.py</code> creates the terminal
+                                summary and detailed validation report.
+                            </li>
+                        </ul>
+
+                        <p>
+                            The completed project contains 44 automated pytest
+                            tests. Ruff completed without findings in the final
+                            project state.
+                        </p>
+
+                        <div class="command-example">
+                            <p>Installed command:</p>
+
+                            <code>research-data-quality-checker &lt;csv-file&gt;</code>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Example Output</h2>
+
+                        <figure class="project-figure">
+                            <img
+                                src="../assets/images/research-data-quality-checker/cli-invalid-dataset.png"
+                                alt="Command-line output of the Research Data Quality Checker showing validation findings for an invalid sample dataset."
+                            >
+
+                            <figcaption>
+                                CLI validation of the artificial invalid sample
+                                dataset included with the project.
+                            </figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Known Limitations</h2>
+
+                        <ul>
+                            <li>The CSV schema is fixed.</li>
+                            <li>
+                                Plausibility ranges are predefined project rules.
+                            </li>
+                            <li>Only one input file is processed per run.</li>
+                            <li>
+                                Detected issues are reported but not corrected
+                                automatically.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Repository</h2>
+
+                        <p>
+                            The complete source code, tests, documentation, and
+                            example data are available in the public GitHub
+                            repository.
+                        </p>
+
+                        <a
+                            class="primary-link"
+                            href="https://github.com/ElijahWittek/research-data-quality-checker"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Repository on GitHub
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Research IT Portfolio · Elijah Wittek</p>
+        </div>
+    </footer>
+</body>
+</html>

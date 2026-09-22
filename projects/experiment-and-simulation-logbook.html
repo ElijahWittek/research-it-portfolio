@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experiment and Simulation Logbook | Research IT Portfolio</title>
+
+    <meta
+        name="description"
+        content="Portfolio project: a Python command-line application for structured documentation and persistent storage of experiment and simulation run records."
+    >
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="site-title" href="../index.html">
+                Research IT Portfolio
+            </a>
+
+            <nav class="site-navigation" aria-label="Main navigation">
+                <ul class="navigation-list">
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#projects">
+                            Projects
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="project-detail">
+            <header class="project-hero">
+                <div class="container">
+                    <p class="section-label">
+                        Application Logic &amp; Persistence
+                    </p>
+
+                    <h1>Experiment and Simulation Logbook</h1>
+
+                    <p class="project-lead">
+                        A local command-line application for structured
+                        documentation, filtering, persistent storage, and export
+                        of experiment and simulation run records.
+                    </p>
+
+                    <a class="back-link" href="../index.html#projects">
+                        Back to Projects
+                    </a>
+                </div>
+            </header>
+
+            <div class="project-detail-content">
+                <div class="container">
+                    <section class="project-section">
+                        <h2>Problem</h2>
+
+                        <p>
+                            Experiment and simulation runs can quickly become
+                            difficult to track when parameters, associated data
+                            files, result summaries, and processing states are
+                            documented inconsistently.
+                        </p>
+
+                        <p>
+                            A consistent data model is therefore useful for
+                            assigning information to individual runs and
+                            maintaining a traceable overview.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Solution</h2>
+
+                        <p>
+                            The application provides a local command-line
+                            logbook with a fixed data model and persistent JSON
+                            storage. Entries can be created, listed, filtered,
+                            marked as completed, and exported as CSV.
+                        </p>
+
+                        <p>
+                            The application documents experiment and simulation
+                            runs but does not execute simulations, experiments,
+                            or scientific calculations itself.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Key Features</h2>
+
+                        <ul>
+                            <li>
+                                Create new logbook entries through an interactive
+                                command-line dialog
+                            </li>
+                            <li>
+                                List all entries with complete stored information
+                            </li>
+                            <li>
+                                Filter entries by status
+                            </li>
+                            <li>
+                                Search entry titles using case-insensitive
+                                partial matching
+                            </li>
+                            <li>
+                                Mark open entries as completed
+                            </li>
+                            <li>
+                                Export the complete logbook as CSV
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technologies</h2>
+
+                        <ul class="technology-list">
+                            <li>Python 3.14+</li>
+                            <li>Python Standard Library</li>
+                            <li>argparse</li>
+                            <li>JSON</li>
+                            <li>CSV</li>
+                            <li>pytest</li>
+                            <li>Ruff</li>
+                            <li>Git &amp; GitHub</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Applied Skills</h2>
+
+                        <ul>
+                            <li>Data modeling</li>
+                            <li>Input and structure validation</li>
+                            <li>Application logic</li>
+                            <li>JSON persistence</li>
+                            <li>Command-line interface development</li>
+                            <li>Filtering and sorting</li>
+                            <li>CSV export</li>
+                            <li>Automated testing</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technical Structure</h2>
+
+                        <p>
+                            The application is divided into modules with
+                            separated responsibilities for command handling,
+                            application logic, validation, persistence, and
+                            export:
+                        </p>
+
+                        <ul>
+                            <li>
+                                <code>main.py</code> provides the module entry
+                                point and starts the CLI.
+                            </li>
+                            <li>
+                                <code>cli.py</code> defines the parser, six
+                                command handlers, interactive input, and terminal
+                                output.
+                            </li>
+                            <li>
+                                <code>logbook.py</code> contains entry creation,
+                                ID generation, sorting, filtering, and status
+                                transition logic.
+                            </li>
+                            <li>
+                                <code>validation.py</code> validates user input
+                                and the complete stored data model.
+                            </li>
+                            <li>
+                                <code>persistence.py</code> loads and saves the
+                                JSON logbook.
+                            </li>
+                            <li>
+                                <code>export.py</code> formats parameters and
+                                exports the logbook as CSV.
+                            </li>
+                        </ul>
+
+                        <p>
+                            The completed project contains 98 automated pytest
+                            tests. Ruff completed without findings in the final
+                            project state.
+                        </p>
+
+                        <div class="command-example">
+                            <p>Repository-based command:</p>
+
+                            <code>PYTHONPATH=src python -m experiment_and_simulation_logbook.main &lt;command&gt;</code>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Data Model &amp; Persistence</h2>
+
+                        <p>
+                            Each logbook entry contains eight defined fields:
+                            identifier, title, creation date, parameters, status,
+                            result summary, data-file reference, and notes.
+                        </p>
+
+                        <p>
+                            The complete logbook is stored locally as UTF-8 JSON.
+                            Changes are persisted after successful creation or
+                            status updates. CSV export provides a separate,
+                            derived overview of the stored entries.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Example Output</h2>
+
+                        <figure class="project-figure">
+                            <img
+                                src="../assets/images/experiment-and-simulation-logbook/cli-overview.png"
+                                alt="Command-line overview of demo entries managed by the Experiment and Simulation Logbook."
+                            >
+
+                            <figcaption>
+                                CLI overview showing demo logbook entries from
+                                the manual functionality test.
+                            </figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Known Limitations</h2>
+
+                        <ul>
+                            <li>
+                                The application is designed for local
+                                single-user operation.
+                            </li>
+                            <li>
+                                The complete dataset is stored in a single JSON
+                                file.
+                            </li>
+                            <li>
+                                Filtering is intentionally limited to simple
+                                status and title filters.
+                            </li>
+                            <li>
+                                Entries cannot be generally edited or deleted.
+                            </li>
+                            <li>
+                                Completed entries cannot be reopened.
+                            </li>
+                            <li>
+                                The application does not execute experiments or
+                                simulations.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Repository</h2>
+
+                        <p>
+                            The complete source code, tests, documentation, and
+                            example data are available in the public GitHub
+                            repository.
+                        </p>
+
+                        <a
+                            class="primary-link"
+                            href="https://github.com/ElijahWittek/experiment-and-simulation-logbook"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Repository on GitHub
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Research IT Portfolio · Elijah Wittek</p>
+        </div>
+    </footer>
+</body>
+</html>

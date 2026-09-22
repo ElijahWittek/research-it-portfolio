@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Data Explorer Light | Research IT Portfolio</title>
+
+    <meta
+        name="description"
+        content="Portfolio project: a Python application for cleaning, filtering, analyzing, visualizing, and exporting historical weather data."
+    >
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="site-title" href="../index.html">
+                Research IT Portfolio
+            </a>
+
+            <nav class="site-navigation" aria-label="Main navigation">
+                <ul class="navigation-list">
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#projects">
+                            Projects
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="project-detail">
+            <header class="project-hero">
+                <div class="container">
+                    <p class="section-label">
+                        Data Analysis &amp; Visualization
+                    </p>
+
+                    <h1>Weather Data Explorer Light</h1>
+
+                    <p class="project-lead">
+                        A local Python application for cleaning, filtering,
+                        analyzing, visualizing, and exporting historical
+                        weather data from the German Weather Service (DWD).
+                    </p>
+
+                    <a class="back-link" href="../index.html#projects">
+                        Back to Projects
+                    </a>
+                </div>
+            </header>
+
+            <div class="project-detail-content">
+                <div class="container">
+                    <section class="project-section">
+                        <h2>Problem</h2>
+
+                        <p>
+                            Historical weather datasets can contain formatting
+                            inconsistencies, missing-value markers, invalid
+                            dates, duplicate records, and more columns than are
+                            required for a specific analysis.
+                        </p>
+
+                        <p>
+                            Before the data can be analyzed or visualized, it
+                            therefore needs to be prepared in a controlled and
+                            reproducible way.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Solution</h2>
+
+                        <p>
+                            The application processes a local historical weather
+                            dataset from the DWD station in Potsdam. It selects
+                            the required columns, cleans and converts the data,
+                            handles duplicates, sorts the records
+                            chronologically, and filters them to a user-defined
+                            date range.
+                        </p>
+
+                        <p>
+                            The resulting dataset is used consistently for
+                            descriptive temperature statistics, two static
+                            visualizations, and a cleaned CSV export.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Key Features</h2>
+
+                        <ul>
+                            <li>
+                                Reading and validating a local DWD weather dataset
+                            </li>
+                            <li>
+                                Cleaning and type conversion of relevant columns
+                            </li>
+                            <li>
+                                Controlled handling of missing values and
+                                duplicate records
+                            </li>
+                            <li>
+                                Inclusive filtering by start and end date
+                            </li>
+                            <li>
+                                Calculation of minimum, maximum, and arithmetic
+                                mean for daily mean temperature
+                            </li>
+                            <li>
+                                Temperature visualization using daily mean,
+                                maximum, and minimum temperature
+                            </li>
+                            <li>
+                                Precipitation visualization using daily
+                                precipitation values
+                            </li>
+                            <li>
+                                Export of the cleaned and filtered dataset as CSV
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technologies</h2>
+
+                        <ul class="technology-list">
+                            <li>Python 3.14+</li>
+                            <li>pandas</li>
+                            <li>Matplotlib</li>
+                            <li>argparse</li>
+                            <li>pytest</li>
+                            <li>Ruff</li>
+                            <li>Git &amp; GitHub</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Applied Skills</h2>
+
+                        <ul>
+                            <li>DataFrame-based data processing</li>
+                            <li>Data cleaning and type conversion</li>
+                            <li>Handling missing and contradictory data</li>
+                            <li>Date-range filtering</li>
+                            <li>Descriptive statistics</li>
+                            <li>Data visualization with Matplotlib</li>
+                            <li>CSV export</li>
+                            <li>Automated testing of processing steps</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technical Structure</h2>
+
+                        <p>
+                            The application uses a functional processing
+                            pipeline divided into modules with clearly separated
+                            responsibilities:
+                        </p>
+
+                        <ul>
+                            <li>
+                                <code>main.py</code> coordinates the CLI workflow,
+                                processing pipeline, error handling, and final
+                                terminal output.
+                            </li>
+                            <li>
+                                <code>data_io.py</code> reads the source dataset
+                                and exports the cleaned data.
+                            </li>
+                            <li>
+                                <code>cleaning.py</code> prepares columns,
+                                validates the station, cleans values, handles
+                                duplicates, and sorts the data.
+                            </li>
+                            <li>
+                                <code>analysis.py</code> validates analysis dates,
+                                filters the selected period, and calculates
+                                temperature statistics.
+                            </li>
+                            <li>
+                                <code>visualization.py</code> creates the
+                                temperature and precipitation diagrams.
+                            </li>
+                        </ul>
+
+                        <p>
+                            The central data structure is a pandas DataFrame.
+                            The documented source dataset contains 48,577 daily
+                            records and 19 raw columns, of which seven are used
+                            by the application.
+                        </p>
+
+                        <p>
+                            The completed project contains 22 automated pytest
+                            tests. Ruff completed without findings, and the
+                            dependency check completed successfully in the final
+                            project state.
+                        </p>
+
+                        <div class="command-example">
+                            <p>Installed command:</p>
+
+                            <code>weather-data-explorer-light &lt;file&gt; &lt;start-date&gt; &lt;end-date&gt;</code>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Example Output</h2>
+
+                        <figure class="project-figure">
+                            <img
+                                src="../assets/images/weather-data-explorer-light/temperature-2025-01-01-2025-01-31.png"
+                                alt="Temperature chart for Potsdam in January 2025 showing daily mean, maximum, and minimum temperatures."
+                            >
+
+                            <figcaption>
+                                Temperature visualization for Potsdam from
+                                January 1 to January 31, 2025.
+                            </figcaption>
+                        </figure>
+
+                        <figure class="project-figure">
+                            <img
+                                src="../assets/images/weather-data-explorer-light/precipitation-2025-01-01-2025-01-31.png"
+                                alt="Precipitation chart for Potsdam in January 2025 showing daily precipitation values."
+                            >
+
+                            <figcaption>
+                                Precipitation visualization for the same
+                                January 2025 analysis period.
+                            </figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Data Source</h2>
+
+                        <p>
+                            The project uses historical daily climate
+                            observations from the DWD Climate Data Center for
+                            station Potsdam. The raw DWD dataset is not stored
+                            in the repository and is provided separately under
+                            its own data license.
+                        </p>
+
+                        <p>
+                            The source data remains unchanged. Cleaning,
+                            filtering, and exported results are created locally
+                            by the application.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Known Limitations</h2>
+
+                        <ul>
+                            <li>
+                                The application is designed for the local
+                                Potsdam station dataset.
+                            </li>
+                            <li>
+                                Source data must be downloaded and provided
+                                locally.
+                            </li>
+                            <li>
+                                Missing measurement values are not interpolated.
+                            </li>
+                            <li>
+                                Statistical analysis is intentionally limited
+                                to basic daily mean temperature statistics.
+                            </li>
+                            <li>
+                                Visualizations are static PNG files rather than
+                                interactive charts.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Repository</h2>
+
+                        <p>
+                            The complete source code, tests, documentation, and
+                            example visualizations are available in the public
+                            GitHub repository.
+                        </p>
+
+                        <a
+                            class="primary-link"
+                            href="https://github.com/ElijahWittek/weather-data-explorer-light"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Repository on GitHub
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Research IT Portfolio · Elijah Wittek</p>
+        </div>
+    </footer>
+</body>
+</html>
