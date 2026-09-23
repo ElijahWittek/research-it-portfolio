@@ -440,3 +440,19 @@ a:focus-visible {
     margin-top: 0.75rem;
     font-size: 0.875rem;
 }
+
+/* ==================================================
+   11. Responsive adjustments
+   ================================================== */
+
+@media (min-width: 40rem) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 59rem) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
