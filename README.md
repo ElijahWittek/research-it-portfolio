@@ -4,6 +4,8 @@ A static portfolio website presenting three completed Research IT projects with 
 
 The portfolio is designed as a compact technical overview for potential employers, internship providers, and other interested readers.
 
+**Live Website:** https://elijahwittek.github.io/research-it-portfolio/
+
 ## Featured Projects
 
 ### Research Data Quality Checker
@@ -35,9 +37,11 @@ research-it-portfolio/
 │   │   └── styles.css
 │   └── images/
 │       ├── experiment-and-simulation-logbook/
-│       │   └── cli-overview.png
+│       │   ├── cli-overview.png
+│       │   └── cli-overview-preview.png
 │       ├── research-data-quality-checker/
-│       │   └── cli-invalid-dataset.png
+│       │   ├── cli-invalid-dataset.png
+│       │   └── cli-invalid-dataset-preview.png
 │       └── weather-data-explorer-light/
 │           ├── precipitation-2025-01-01-2025-01-31.png
 │           └── temperature-2025-01-01-2025-01-31.png
@@ -117,18 +121,22 @@ During development, the website is previewed locally using the VS Code Live Serv
 
 ## Publication
 
-The portfolio is intended to be published as a static website using GitHub Pages.
+The portfolio is published as a static website using GitHub Pages:
 
-Publication is performed only after the local version has completed the planned quality assurance checks.
+https://elijahwittek.github.io/research-it-portfolio/
 
-The final published version will also be checked for:
+GitHub Pages deploys the website from the `main` branch and the repository root.
+
+After publication, the deployed version was manually checked for:
 
 - working internal navigation
 - working external repository links
 - correct stylesheet and image paths
-- responsive rendering
-- browser compatibility
-- keyboard navigation and focus visibility
+- responsive rendering on narrow, medium, and large viewport widths
+- browser compatibility in Google Chrome and Firefox
+- keyboard navigation and visible focus states
+
+All planned local and published quality assurance checks for version 1.0 were completed successfully.
 
 ## Project Scope
 
